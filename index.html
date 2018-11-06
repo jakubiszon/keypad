@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Keypad</title>
+</head>
+<body>
+
+<textarea id='editor'></textarea>
+<div data-keypad-target='#editor'>
+	<input type='button' value='ą' />
+	<input type='button' value='ć' />
+	<input type='button' value='ę' />
+	<input type='button' value='ł' />
+	<input type='button' value='ń' />
+	<input type='button' value='ó' />
+	<input type='button' value='ś' />
+	<input type='button' value='ż' />
+	<input type='button' value='ź' />
+	<input type='button' value='&oplus;&asymp;&otimes;' />
+</div>
+
+<hr>
+
+<table id='paradigm'>
+	<tr>
+		<td>person</td>
+		<td>singular</td>
+		<td>plural</td>
+	</tr>
+	<tr>
+		<td>first</td>
+		<td><input type='text' name='first-person-singular' /></td>
+		<td><input type='text' name='first-person-plural' /></td>
+	</tr>
+	<tr>
+		<td>second</td>
+		<td><input type='text' name='second-person-singular' /></td>
+		<td><input type='text' name='second-person-plural' /></td>
+	</tr>
+	<tr>
+		<td>third</td>
+		<td><input type='text' name='third-person-singular' /></td>
+		<td><input type='text' name='third-person-plural' /></td>
+	</tr>
+</table>
+
+<div data-keypad-target='#paradigm'>
+	<input type='button' value='ą' />
+	<input type='button' value='ć' />
+	<input type='button' value='ę' />
+	<input type='button' value='ł' />
+	<input type='button' value='ń' />
+	<input type='button' value='ó' />
+	<input type='button' value='ś' />
+	<input type='button' value='ż' />
+	<input type='button' value='ź' />
+</div>
+
+<hr>
+<input type='text' id='dropdown-input' />
+
+<div>
+<select data-keypad='#dopdown-keypad' id='dupa'>
+	<option data-keys='ą,ć,ę,ł,ń,ó,ś,ż,ź'>Polish</option>
+	<option data-keys='á,ä,č,ď,í,ĺ,ľ,ň,ó,ô,ŕ,š,ť,ú,ý,ž'>Slovak</option>
+	<option data-keys='ç,ğ,ı,ö,ş,ü'>Turkish</option>
+</select> : <span id='dopdown-keypad' data-keypad-target='#dropdown-input'></span>
+</div>
+
+
+<script src='keypad.js'></script>
+<script type='text/javascript'>
+var select = document.getElementById('dupa');
+select.onchange = function() {console.log(this.options[this.selectedIndex].innerText)}
+
+
+
+
+
+</script>
+</body>
+</html>
