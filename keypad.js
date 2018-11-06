@@ -8,18 +8,15 @@
 		var idx = lastUsed.indexOf(event.target);
 		if(idx >= 0) lastUsed.splice(idx, 1);
 		lastUsed.unshift(event.target);
-		//console.log(lastUsed.map( function(e) {return e.name} ) );
 	}
 		
 	function clickHandler(event) {
 		// make sure the element clicked is an input and belongs to a keypad
 		if(!isMatch(event.target, 'input[type=button][data-keypad-target], [data-keypad-target] input[type=button]')) return;
-		//console.log('keypad: ', event.target.value);
 		
 		// find the keypad
 		var elementWithTarget = event.target.getAttribute('data-keypad-target') ?
 			event.target : closest(event.target, '[data-keypad-target]');
-		//console.log('target: ', elementWithTarget.getAttribute('data-keypad-target'));
 		if(!elementWithTarget) return;
 
 		var targetInput = findTarget(elementWithTarget.getAttribute('data-keypad-target'));
@@ -44,10 +41,6 @@
 		var start = element.selectionStart;
 		var end = element.selectionEnd;
 		var oldValue = element.value;
-		//console.log('start: ', start);
-		//console.log('end: ', end);
-		//console.log('part1: ', oldValue.substring(0, start));
-		//console.log('part2: ', oldValue.substring(end));
 		element.value = oldValue.substring(0, start) + text + oldValue.substring(end);
 		element.focus();
 		element.setSelectionRange(start + text.length, start + text.length);
