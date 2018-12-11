@@ -17,7 +17,7 @@ There is no javascript to run. You only need to include `keypad.js` on the page.
 ```
 * you can have as many keypads as you want
 * you can make a single keypad point to a group of input elements - the last focused element will be updated
-```
+```html
 <table id='paradigm'>
 	<tr>
 		<td>person</td>
@@ -51,5 +51,21 @@ There is no javascript to run. You only need to include `keypad.js` on the page.
 	<input type='button' value='ś' />
 	<input type='button' value='ż' />
 	<input type='button' value='ź' />
+</div>
+```
+## Keyset Switch
+You can also use dropdowns to switch from one set of characters to another.
+* assign `data-keypad` attribute to a `select` element
+* the `data-keypad` attribute should be a CSS selector specifying the container of your buttons
+* your buttons will appear when the page is loaded and when the selected option is changed
+```html
+<input type='text' id='dropdown-input' />
+
+<div>
+<select data-keypad='#dopdown-keypad' id='dupa'>
+	<option data-keys='ą,ć,ę,ł,ń,ó,ś,ż,ź'>Polish</option>
+	<option data-keys='á,ä,č,ď,í,ĺ,ľ,ň,ó,ô,ŕ,š,ť,ú,ý,ž'>Slovak</option>
+	<option data-keys='ç,ğ,ı,ö,ş,ü'>Turkish</option>
+</select> : <span id='dopdown-keypad' data-keypad-target='#dropdown-input'></span>
 </div>
 ```
