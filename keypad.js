@@ -1,5 +1,4 @@
 (function() {
-	// this code section serves the keypad buttons
 	var lastUsed = [];
 	document.addEventListener('focus', focusHandler, true);
 	document.addEventListener('click', clickHandler);
@@ -30,11 +29,11 @@
 		
 		// the target is not an element one could write to, we need to query for writable elements
 		var elements = targetElement.querySelectorAll('textarea, input[type=text]');
-		if(elements.length == 0) return null;
+		if(elements.length === 0) return null;
 		
 		// we need to check if any of these elements
 		elements = Array.prototype.slice.call(elements);
-		var foundAsLastUsed = lastUsed.filter(function(e) {return elements.indexOf(e) >= 0});
+		var foundAsLastUsed = lastUsed.filter(function(e) {return elements.indexOf(e) >= 0;});
 		return foundAsLastUsed.length ? foundAsLastUsed[0] : elements[0];
 	}
 	
@@ -64,7 +63,6 @@
 })();
 
 (function(){
-	// this code section serves the language dropdown
 	document.addEventListener('change', changeHandler);
 	function changeHandler(event) {
 		if(!isMatch(event.target, 'select[data-keypad]')) return;
@@ -77,6 +75,7 @@
 	}
 	
 	function addButton(text) {
+		if(!text)return;
 		var button = document.createElement('input');
 		button.type = 'button';
 		button.value = text;
@@ -89,5 +88,7 @@
 	}
 	
 	// initialise for all elements
-	Array.prototype.map.call(document.querySelectorAll('select[data-keypad]'), function(e){changeHandler({target:e})});
+	window.addEventListener('load', function(){
+		Array.prototype.map.call(document.querySelectorAll('select[data-keypad]'), function(e){changeHandler({target:e});});
+	});
 })();
