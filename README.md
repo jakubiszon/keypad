@@ -16,7 +16,7 @@ There is no javascript to run. You only need to include `keypad.js` on the page.
 </div>
 ```
 * you can have as many keypads as you want
-* you can make a single keypad point to a group of input elements - the last focused element will be updated
+* you can make a single keypad point to a group of input elements - the last focused element will be updated, to achieve that point the keypad to the container of the input elements
 ```html
 <table id='paradigm'>
 	<tr>
