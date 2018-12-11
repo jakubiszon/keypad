@@ -1,4 +1,5 @@
 (function() {
+	// this code section serves the keypad buttons
 	var lastUsed = [];
 	document.addEventListener('focus', focusHandler, true);
 	document.addEventListener('click', clickHandler);
@@ -63,6 +64,7 @@
 })();
 
 (function(){
+	// this code section serves the language dropdown
 	document.addEventListener('change', changeHandler);
 	function changeHandler(event) {
 		if(!isMatch(event.target, 'select[data-keypad]')) return;
