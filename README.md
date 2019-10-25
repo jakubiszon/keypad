@@ -62,10 +62,10 @@ You can also use dropdowns to switch from one set of characters to another.
 <input type='text' id='dropdown-input' />
 
 <div>
-<select data-keypad='#dopdown-keypad'>
+<select data-keypad='#dropdown-keypad'>
 	<option data-keys='ą,ć,ę,ł,ń,ó,ś,ż,ź'>Polish</option>
 	<option data-keys='á,ä,č,ď,í,ĺ,ľ,ň,ó,ô,ŕ,š,ť,ú,ý,ž'>Slovak</option>
 	<option data-keys='ç,ğ,ı,ö,ş,ü'>Turkish</option>
-</select> : <span id='dopdown-keypad' data-keypad-target='#dropdown-input'></span>
+</select> : <span id='dropdown-keypad' data-keypad-target='#dropdown-input'></span>
 </div>
 ```
